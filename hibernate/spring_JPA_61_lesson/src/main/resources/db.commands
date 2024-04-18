@@ -1,0 +1,20 @@
+insert into person(name, age, email) values ('Tom',25,'tom@mail.ru');
+insert into person(name, age, email) values ('Bob',31,'bob1@mail.ru');
+insert into person(name, age, email) values ('Bob',53,'bob2@mail.ru');
+insert into person(name, age, email) values ('Bob',20,'bob3@mail.ru');
+insert into person(name, age, email) values ('Katy',14,'katy@mail.ru');
+
+insert into item(person_id, item_name) values (7, 'Airpods');
+insert into item(person_id, item_name) values (7, 'PlayStation');
+insert into item(person_id, item_name) values (7, 'TV');
+
+
+-- Просто дата без точного времени (03/04/2000)
+ALTER TABLE person ADD COLUMN date_of_birth DATE;
+
+-- Точное время
+-- Значения timestamp сохраняются в секундах до или после полуночи 1 января 2000 г.
+ALTER TABLE person ADD COLUMN created_at TIMESTAMP;
+
+alter table person add column mood int -- т к мы выбрали Ordinal
+alter table person add column mood varchar -- если выбираем @Enumerated(EnumType.String)

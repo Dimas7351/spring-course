@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:lesson_7_hw/musicPlayer.properties"/>
+
+    <bean id="rockMusicBean"
+          class="spring.app.fin.lesson_7_HW.RockMusic">
+    </bean>
+    <bean id="classicalMusicBean"
+          class="spring.app.fin.lesson_7_HW.ClassicalMusic">
+    </bean>
+    <bean id="rapMusicBean"
+          class="spring.app.fin.lesson_7_HW.RapMusic">
+    </bean>
+
+    <bean id="musicPlayer"
+          class = "spring.app.fin.lesson_7_HW.MusicPlayer">
+        <property name="musicList">
+            <list>
+                <ref bean="classicalMusicBean"/>
+                <ref bean="rockMusicBean"/>
+                <ref bean="rapMusicBean"/>
+            </list>
+        </property>
+
+    </bean>
+
+
+</beans>

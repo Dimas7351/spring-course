@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <bean id="musicBean"
+          class="spring.app.fin.ClassicalMusic"
+            init-method="doMyInit"
+            destroy-method="doMyDestroy"
+            factory-method="getClassicalMusic">
+    </bean>
+
+<!--    <bean id="musicPlayer"-->
+<!--          class = "spring.app.fin.lesson_7_DI.MusicPlayer"-->
+<!--            scope="prototype"> &lt;!&ndash; создает различные объекты, а не один и ссылки на него &ndash;&gt;-->
+<!--        <property name="music" ref="musicBean"/>  &lt;!&ndash; Вызываем setter. Java отметет set и заглавную букву M в setMusic превращает просто в music &ndash;&gt;-->
+
+<!--        &lt;!&ndash;<property name="name" value="Some name"/>-->
+<!--        <property name="volume" value="50"/> &ndash;&gt;-->
+
+<!--        &lt;!&ndash; Берем значения из файла musicPLayer.properties&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
+
+
+</beans>
